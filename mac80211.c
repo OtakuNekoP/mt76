@@ -14,6 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 #include "mt76.h"
+#include "of.h"
 
 #define CHAN2G(_idx, _freq) {			\
 	.band = NL80211_BAND_2GHZ,		\

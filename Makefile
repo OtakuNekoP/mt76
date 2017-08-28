@@ -15,3 +15,14 @@ mt7603e-y := \
 	mt7603_pci.o mt7603_soc.o mt7603_main.o mt7603_init.o mt7603_mcu.o \
 	mt7603_core.o mt7603_dma.o mt7603_mac.o mt7603_eeprom.o \
 	mt7603_beacon.o mt7603_debugfs.o
+
+CURRENT_PATH := $(shell pwd)
+LINUX_KERNEL := $(shell uname -r)
+LINUX_KERNEL_PATH := /usr/src/linux-headers-$(LINUX_KERNEL)
+
+all:
+	$(MAKE) -C $(LINUX_KERNEL_PATH) M=$(CURRENT_PATH) modules
+
+clean:
+	rm *.ko
+	rm *.o
